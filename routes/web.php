@@ -5,6 +5,7 @@ use App\Http\Controllers\FormMedoController;
 use App\Http\Controllers\PensamentosController;
 use App\Http\Controllers\EvidenciasController;
 use App\Http\Controllers\InflexivelController;
+use App\Http\Controllers\ProblemasController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -25,3 +26,7 @@ Route::get('/eresults', [EvidenciasController::class, 'showResults'])->name('ere
 Route::get('/inflexivel', [InflexivelController::class, 'index']);
 Route::post('/inflexivel/save', [InflexivelController::class, 'save'])->name('inflexivel.save');
 Route::get('/iresults', [InflexivelController::class, 'showResults'])->name('iresults');
+
+Route::get('/problemas', [ProblemasController::class, 'index']);
+Route::post('/problemas/save', [ProblemasController::class, 'save'])->name('problemas.save');
+Route::get('/proresults', [ProblemasController::class, 'showResults'])->name('proresults');
