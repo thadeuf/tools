@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormMedoController;
 use App\Http\Controllers\PensamentosController;
 use App\Http\Controllers\EvidenciasController;
+use App\Http\Controllers\InflexivelController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -20,3 +21,7 @@ Route::get('/presults', [PensamentosController::class, 'showResults'])->name('pr
 Route::get('/evidencias', [EvidenciasController::class, 'index']);
 Route::post('/evidencias/save', [EvidenciasController::class, 'save'])->name('evidencias.save');
 Route::get('/eresults', [EvidenciasController::class, 'showResults'])->name('eresults');
+
+Route::get('/inflexivel', [InflexivelController::class, 'index']);
+Route::post('/inflexivel/save', [InflexivelController::class, 'save'])->name('inflexivel.save');
+Route::get('/iresults', [InflexivelController::class, 'showResults'])->name('iresults');
